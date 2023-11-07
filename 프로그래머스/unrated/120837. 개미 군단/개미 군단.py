@@ -10,15 +10,3 @@ def solution(hp):
     hp -= knight_num * knight
     
     return rook_num + knight_num + hp
-    
-    
-    # while (hp):
-    #     if hp < rook:
-    #         if hp < knight:
-    #             hp -= pawn
-    #             count += 1
-    #         hp -= knight
-    #         count += 1
-    #     hp -= rook
-    #     count += 1
-    return count
