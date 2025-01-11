@@ -15,7 +15,7 @@ for _ in range(n):
 
 size = min(n,m)
 
-# 가장 큰 정사각형을 구해야 하므로 최대 크기부터 하나씩 줄여가며 시작
+# 최대 크기부터 하나씩 줄여가며 시작
 for k in range(size, 0, -1):
     # 네 꼭지점의 크기가 같은 정사각형을 찾았으면 True를 받아 넓이를 출력해주고 break
     if find_squre(k):
