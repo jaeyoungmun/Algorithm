@@ -7,23 +7,26 @@ temp = []
 dic = {}
 dfs_answer = []
 bfs_answer = []
-
-# 간선 정보를 딕셔너리에 저장
 for _ in range(m):
-    u, w = map(int, input().split())
-    if u in dic:
-        dic[u].append(w)
-    else:
-        dic[u] = [w]
+    temp.append(list(map(int, input().split())))
 
-    if w in dic:
-        dic[w].append(u)
-    else:
-        dic[w] = [u]
+# print(dic)
+# print(temp[0][1])
 
-# 각 리스트를 정렬
-for key in dic:
-    dic[key].sort()
+# 간선의 개수만큼 for문 돌려서 일단 저장하고 이후에 root를 기준으로 정렬하자
+for i in temp:
+    if i[0] in dic:
+        dic[i[0]].append(i[1])
+    else:
+        dic[i[0]] = [(i[1])]
+
+    if i[1] in dic:
+        dic[i[1]].append(i[0])
+    else:
+        dic[i[1]] = [i[0]]
+# print(dic)
+for i in dic:
+    dic[i].sort()
 
 # DFS 구현
 def dfs(r):
